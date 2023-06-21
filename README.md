@@ -72,9 +72,33 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 Nest is [MIT licensed](LICENSE).
 
+---
 
+# Source
+https://www.youtube.com/watch?v=geYvdbpo3cA
 
-# Commands Used
+## Commands Used
 ```
 nest new nest-graphql-demo
+npm i @nestjs/graphql @nestjs/apollo @apollo/server graphql
+nest g module pets
+nest g service pets
+nest g resolver pets
+```
+
+Added 
+```
+  "endOfLine": "auto"
+```
+to .prettierrc
+
+```
+npm i @nestjs/typeorm typeorm sqlite3
+```
+```
+npm i class-validator class-transformer
+```
+
+```
+nest g resource owners
 ```
