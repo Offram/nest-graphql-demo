@@ -7,6 +7,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { OwnersModule } from './owners/owners.module';
+import { SeederModule } from './database/seeder/seeder.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { OwnersModule } from './owners/owners.module';
     }),
     PetsModule,
     OwnersModule,
+    SeederModule,
   ],
   controllers: [AppController],
   providers: [AppService],
