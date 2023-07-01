@@ -102,3 +102,14 @@ npm i class-validator class-transformer
 ```
 nest g resource owners
 ```
+
+```
+npm install --save @nestjs/passport passport passport-local
+npm install --save-dev @types/passport-local
+nest g module auth
+nest g service auth
+nest g resolver auth
+npm install --save @nestjs/jwt passport-jwt
+npm install --save-dev @types/passport-jwt
+npm i bcrypt
+```

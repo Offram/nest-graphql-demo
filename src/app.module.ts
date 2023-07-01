@@ -8,6 +8,8 @@ import { join } from 'path';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { OwnersModule } from './owners/owners.module';
 import { SeederModule } from './database/seeder/seeder.module';
+import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -25,6 +27,8 @@ import { SeederModule } from './database/seeder/seeder.module';
     PetsModule,
     OwnersModule,
     SeederModule,
+    UsersModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

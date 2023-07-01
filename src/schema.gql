@@ -20,11 +20,33 @@ type MutationResponseOutput {
   affected: Int!
 }
 
+type Role {
+  id: Int!
+  rolename: String!
+  users: [User!]
+}
+
+type User {
+  id: Int!
+  username: String!
+  password: String!
+  roleId: Int!
+  role: Role!
+}
+
+type LoginResponse {
+  access_token: String!
+  user: User!
+}
+
 type Query {
   getPet(id: Int!): Pet!
   pets: [Pet!]!
   owners: [Owner!]!
   owner(id: Int!): Owner!
+  users: [User!]!
+  user(username: String!): User!
+  roles: [Role!]!
 }
 
 type Mutation {
@@ -32,6 +54,8 @@ type Mutation {
   createOwner(createOwnerInput: CreateOwnerInput!): Owner!
   updateOwner(updateOwnerInput: UpdateOwnerInput!): MutationResponseOutput!
   removeOwner(id: Int!): MutationResponseOutput!
+  login(loginUserInput: LoginUserInput!): LoginResponse!
+  signup(signupUserInput: SignupUserInput!): User!
 }
 
 input CreatePetInput {
@@ -47,4 +71,15 @@ input CreateOwnerInput {
 input UpdateOwnerInput {
   name: String
   id: Int!
+}
+
+input LoginUserInput {
+  username: String!
+  password: String!
+}
+
+input SignupUserInput {
+  username: String!
+  password: String!
+  roleId: Float!
 }
