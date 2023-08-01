@@ -11,6 +11,11 @@ import { PetsService } from './pets.service';
 import { Pet } from './pet.entity';
 import { CreatePetInput } from './dto/create-pet.input';
 import { Owner } from 'src/owners/entities/owner.entity';
+import { UseGuards } from '@nestjs/common';
+import { JwtAuthGuard } from 'src/auth/guard/jwt-guard.guard';
+import { HasRoles } from 'src/auth/decorators/has-roles.deocrator';
+import { Roles } from 'src/structures/enums/enums';
+import { RolesGuard } from 'src/auth/guard/roles.guard';
 
 @Resolver(() => Pet)
 export class PetsResolver {
@@ -22,6 +27,8 @@ export class PetsResolver {
   }
 
   @Query(() => [Pet])
+  @HasRoles(Roles.ALL_ALLOWED)
+  @UseGuards(JwtAuthGuard, RolesGuard)
   pets(): Promise<Pet[]> {
     return this.petsService.findAll();
   }

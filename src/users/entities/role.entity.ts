@@ -1,11 +1,11 @@
 import { ObjectType, Field, Int } from '@nestjs/graphql';
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, OneToMany, PrimaryColumn } from 'typeorm';
 import { User } from './user.entity';
 
 @Entity()
 @ObjectType()
 export class Role {
-  @PrimaryGeneratedColumn()
+  @PrimaryColumn()
   @Field(() => Int)
   id: number;
 

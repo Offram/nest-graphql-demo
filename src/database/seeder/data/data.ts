@@ -22,28 +22,31 @@ export const usersSeed: CreateUserInput[] = [
   {
     username: 'all_allowed_user',
     password: '$2b$10$IN/vxniVHe0AI4W7GoBHxerZnVvdFXEmzvO5AxmboJusFJRmj0Zwi',
-    roleId: 3,
+    roleId: 1,
   },
   {
     username: 'partially_allowed_user',
     password: '$2b$10$IN/vxniVHe0AI4W7GoBHxerZnVvdFXEmzvO5AxmboJusFJRmj0Zwi',
-    roleId: 1,
+    roleId: 2,
   },
   {
     username: 'none_allowed_user',
     password: '$2b$10$IN/vxniVHe0AI4W7GoBHxerZnVvdFXEmzvO5AxmboJusFJRmj0Zwi',
-    roleId: 2,
+    roleId: 3,
   },
 ];
 
 export const rolesSeed: CreateRoleInput[] = [
   {
+    id: 1,
     rolename: Roles.ALL_ALLOWED, // 3
   },
   {
-    rolename: Roles.PARTIALLY_ALLOWED, // 1
+    id: 2,
+    rolename: Roles.PARTIALLY_ALLOWED,
   },
   {
+    id: 3,
     rolename: Roles.NONE_ALLOWED, // 2
   },
 ];

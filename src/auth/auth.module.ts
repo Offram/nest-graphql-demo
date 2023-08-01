@@ -13,7 +13,7 @@ import { JwtStrategy } from './jwt.strategy';
     UsersModule,
     JwtModule.register({
       signOptions: {
-        expiresIn: '60s',
+        expiresIn: '6h',
       },
       secret: 'hide-me', //process.env.JWT_SECRET
     }),
